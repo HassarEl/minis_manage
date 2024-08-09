@@ -1,0 +1,109 @@
+{% extends  'home.html' %}
+
+{% block title %}About Page{% endblock  %}
+
+{% block page_title %}<h1 class="h3 mb-3">Condidature</h1>{% endblock  %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header text-bg-dark">
+        <div class="row d-flex justify-content-between">
+            <div class="col-3">
+                <h1 class="h3 text-light">Ajouter Condidtas</h1>
+            </div>
+            <div class="col-3">
+                <a class="btn btn-info" href="{% url 'gestion_condidat' %}">Condidatures</a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <form class="form-control" method="POST" action="{% url 'create_condidat' %}">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="matricule" class="form-label">Matricule</label>
+                        <input type="text" name="matricule" class="form-control" id="matricule" placeholder="Enter le Matricule Example CON000001">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="num_cin" class="form-label">N° CIN</label>
+                        <input type="text" name="num_cin" class="form-control" id="num_cin" placeholder="Enter le Numero CIN">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="nom" class="form-label">Nom</label>
+                        <input type="text" name="first_name" class="form-control" id="nom" placeholder="Entre le nom...">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="prenom" class="form-label">Prenom</label>
+                        <input type="text" name="last_name" class="form-control" id="prenom" placeholder="Enter Le Prenom...">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label class="form-label">Direction</label>
+                        <select class="form-select" name="direction">
+                            <option selected>Coisie la Direction</option>
+                            <option value="IGE">IGE</option>
+                            <option value="ADII">ADII</option>
+                            <option value="TGR">TGR</option>
+                            <option value="DGI">DGI</option>
+                            <option value="DB">DB</option>
+                            <option value="DTFE">DTFE</option>
+                            <option value="DDE">DDE</option>
+                            <option value="DAAG">DAAG</option>
+                            <option value="DEPF">DEPF</option>
+                            <option value="AJR">AJR</option>
+                            <option value="DCPC">DCPC</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Téléphone</label>
+                        <input type="text" name="phone" class="form-control" id="phone" placeholder="Enter le Numero de téléphone">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">email</label>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter l'email...">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label class="form-label">categorie</label>
+                        <select name="categorie" class="form-select">
+                            <option selected>Choisie la categorie</option>
+                            <option value="Euvre d'art">Euvre d'art</option>
+                            <option value="Literature">Literature</option>
+                            <option value="Descoration Interne">Descoration Interne</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Description</label>
+                        <textarea  name="description" class="form-control" placeholder="Description..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="mb-3 btn btn-primary">Ajouter</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

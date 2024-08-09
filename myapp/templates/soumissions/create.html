@@ -1,0 +1,31 @@
+{% extends  'home.html' %}
+
+{% block title %}Jyry Page{% endblock  %}
+
+{% block page_title %}<h1 class="h3 mb-3">Soumission</h1>{% endblock  %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header text-bg-dark">
+        <div class="row d-flex justify-content-between">
+            <div class="col-3">
+                <h1 class="h3 text-light">Ajouter Soumission</h1>
+            </div>
+            <div class="col-3">
+                <a class="btn btn-info" href="{% url 'jury' %}">Soumissions</a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <form class="form-control" method="POST" action="">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="username" class="form-label"></label>
+                <input type="text" name="" class="form-control" id="username">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

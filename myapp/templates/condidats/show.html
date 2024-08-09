@@ -1,0 +1,41 @@
+{% extends  'home.html' %}
+
+{% block title %}About Page{% endblock  %}
+
+{% block page_title %}<h1 class="h3 mb-3">Page Cabdidat</h1>{% endblock  %}
+
+{% block content %}
+<div class="row d-flex justify-content-center">
+    <div class="card col-6">
+        <div class="card-header text-bg-dark">
+            <div class="row d-flex justify-content-between">
+                <div class="col-3">
+                    <h1 class="h3 text-light">Matrecule : {{condidat.matricule}}</h1>
+                </div>
+                <div class="col-3">
+                    <a class="btn btn-info" href="{% url 'gestion_condidat' %}">Liste Condidatures</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row d-flex justify-content-center">
+                <div class="col-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>Nom : {{condidat.first_name}}</h4>
+                            <h4>Prenom : {{condidat.last_name}}</h4>
+                            <h4>N° Cin : {{condidat.num_cin}}</h4>
+                            <h4>Téléphone : {{condidat.phone}}</h4>
+                            <h4>Email : {{condidat.email}}</h4>
+                            <h2>Travail </h2>
+                            <h4>Direction : {{condidat.direction}}</h4>
+                            <h4>Categorie : {{travail.categorie}}</h4>
+                            <h4>Description : {{travail.description}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

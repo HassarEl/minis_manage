@@ -1,0 +1,46 @@
+{% extends  'home.html' %}
+
+{% block title %}Jyry Page{% endblock  %}
+
+{% block page_title %}<h1 class="h3 mb-3">Jury</h1>{% endblock  %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header text-bg-dark">
+        <div class="row d-flex justify-content-between">
+            <div class="col-3">
+                <h1 class="h3 text-light">Modifier Jury</h1>
+            </div>
+            <div class="col-3">
+                <a class="btn btn-info" href="{% url 'jury' %}">Jurys</a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <form class="form-control" method="POST" action="{% url 'update_jur' jury.id %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" name="username" value="{{jury.username}}"  class="form-control" id="username" placeholder="Enter le nom d'utilisateur">
+            </div>
+            <div class="mb-3">
+                <label for="nom" class="form-label">Nom</label>
+                <input type="text" name="first_name" value="{{jury.first_name}}" class="form-control" id="nom" placeholder="Entre le nom...">
+            </div>
+            <div class="mb-3">
+                <label for="prenom" class="form-label">Prenom</label>
+                <input type="text" name="last_name" value="{{jury.last_name}}" class="form-control" id="prenom" placeholder="Enter Le Prenom...">
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Téléphone</label>
+                <input type="text" name="phone" value="{{jury.phone}}" class="form-control" id="phone" placeholder="Enter le Numero de téléphone">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">email</label>
+                <input type="email" name="email" value="{{jury.email}}" class="form-control" id="email" placeholder="Enter l'email...">
+            </div>
+            <button type="submit" class="btn btn-primary">Modifier</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends  'home.html' %}
+
+{% block title %}Soumissions{% endblock  %}
+
+{% block page_title %}<h1 class="h3 mb-3">Soumissions</h1>{% endblock  %}
+
+{% block content %}
+<div class="card ">
+    <div class="card-header text-bg-dark">
+        <div class="row d-flex justify-content-between">
+            <div class="col-3">
+                <h1 class="h3 text-light">Gestion Des Soumissions</h1>
+            </div>
+            <div class="col-3">
+                <a class="btn btn-info" href="{% url 'add_soumission' %}">Ajouter Soumission</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="card-body">
+        <div class="row">
+            {% for travail in traveaux %}
+            <div class="col-4">
+                <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+                    <h4 class="card-text">{{ travail.num_inscription }}</h4>
+                    <div class="card-body">
+                        <h5 class="card-text">{{ travail.categorie }}</h5>
+                        <p class="card-text">{{ travail.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

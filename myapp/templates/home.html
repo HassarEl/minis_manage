@@ -1,0 +1,104 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+	{% include 'include_files/head.html' %}
+	<title>
+		{% block title %} Home {% endblock %}
+	</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- aside bar section -->
+		{% include 'include_files/aside_bar.html' %}
+
+		<div class="main">
+			<!-- header nav section -->
+			{% include 'include_files/header.html' %}
+
+			<main class="content">
+				<div class="container-fluid p-0">
+
+					{% block page_title %}
+						<h1 class="h3 mb-3">Home</h1>
+					{% endblock  %}
+
+					{% block content %}
+						<div class="row">
+							<div class="col-3">
+								<div class="card border-warning mb-3 bg-dark bg-gradient">
+  									<div class="card-header bg-dark"><h2  class="text-light">Candidates</h2></div>
+  									<div class="card-body">
+    									<h4 class="card-title">{{candidates}}</h4>
+  									</div>
+								</div>
+							</div>
+
+							<div class="col-3">
+								<div class="card border-warning mb-3 bg-dark bg-gradient">
+  									<div class="card-header bg-dark"><h2  class="text-light">jurys</h2></div>
+  									<div class="card-body">
+    									<h4 class="card-title">{{jurys}}</h4>
+  									</div>
+								</div>
+							</div>
+
+							<div class="col-3">
+								<div class="card border-warning mb-3 bg-dark bg-gradient">
+  									<div class="card-header bg-dark"><h2 class="text-light">Traveaux</h2></div>
+  									<div class="card-body">
+    									<h4 class="card-title">{{traveaux}}</h4>
+  									</div>
+								</div>
+							</div>
+
+							<div class="col-3">
+								<div class="card border-warning mb-3 bg-dark bg-gradient">
+  									<div class="card-header bg-dark"><h2 class="text-light">Soumissions</h2></div>
+  									<div class="card-body">
+    									<h4 class="card-title">{{traveaux}}</h4>
+  									</div>
+								</div>
+							</div>
+						</div>
+					{% endblock %}
+				</div>
+			</main>
+
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-start">
+							<p class="mb-0">
+								<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>AdminKit</strong></a> - <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>Bootstrap Admin Template</strong></a>								&copy;
+							</p>
+						</div>
+						<div class="col-6 text-end">
+							<ul class="list-inline">
+								<li class="list-inline-item">
+									<a class="text-muted" href="https://adminkit.io/" target="_blank">Support</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="https://adminkit.io/" target="_blank">Help Center</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="https://adminkit.io/" target="_blank">Privacy</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="https://adminkit.io/" target="_blank">Terms</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+	{% include 'include_files/script.html' %}
+
+</body>
+
+</html>

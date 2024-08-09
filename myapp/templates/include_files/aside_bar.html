@@ -1,0 +1,52 @@
+{% load static %}
+
+<nav id="sidebar" class="sidebar js-sidebar">
+			<div class="sidebar-content js-simplebar">
+				<a class="sidebar-brand" href="{% url 'home' %}">
+					<img src="{% static 'website/img/ministre.jpg' %}" height="100px" alt="">
+        		</a>
+
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">
+						Pages
+					</li>
+
+					<li class="sidebar-item active">
+						<a class="sidebar-link" href="{% url 'home' %}">
+              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+            </a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="{% url 'gestion_condidat' %}">
+              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Gestion Condidats</span>
+            </a>
+					</li>
+
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="{% url 'jury' %}">
+              <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Jury</span>
+            </a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="{% url 'soumission' %}">
+              <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Soumissions</span>
+            </a>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="">
+              				<i class="align-middle" data-feather="book"></i> <span class="align-middle">Gérer les Dates limites</span>
+            			</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="{% url 'about' %}">
+              				<i class="align-middle" data-feather="book"></i> <span class="align-middle">About</span>
+            			</a>
+					</li>
+				</ul>
+			</div>
+		</nav>

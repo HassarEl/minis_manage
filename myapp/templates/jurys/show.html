@@ -1,0 +1,39 @@
+{% extends  'home.html' %}
+
+{% block title %}Jury Page{% endblock  %}
+
+{% block page_title %}<h1 class="h3 mb-3">Page Jury</h1>{% endblock  %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header text-bg-dark">
+        <div class="row d-flex justify-content-between">
+            <div class="col-6">
+                <h1 class="h3 text-light">Username : {{jury.username}}</h1>
+            </div>
+            <div class="col-3">
+                <a class="btn btn-info" href="{% url 'jury' %}">Liste Jury</a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="card">
+            <div class="card-body">
+                <h4>Nom : {{jury.first_name}}</h4>
+                <h4>Prenom : {{jury.last_name}}</h4>
+                <h4>Téléphone : {{jury.phone}}</h4>
+                <h4>Email : {{jury.email}}</h4>
+                <br>
+                <div class="row">
+                    <div class="col-2">
+                        <a href="{% url 'delete_jury' jury.id  %}" onclick="return confirm('Confirm deleted?')" class="btn btn-danger">supprimer</a>
+                    </div>
+                    <div class="col-2">
+                       <a href="{% url 'update_jury' jury.id %}"  class="btn btn-warning">modifier</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
